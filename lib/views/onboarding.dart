@@ -14,7 +14,11 @@ class OnBoardingScreen extends StatelessWidget {
               "Welcome",
               style: TextStyle(
                 fontSize: 24,
+                fontWeight: FontWeight.w600,
               ),
+            ),
+            SizedBox(
+              height: 5,
             ),
             Text(
               "Let\'s Get Started",
@@ -38,9 +42,27 @@ class OnBoardingScreen extends StatelessWidget {
             LongButton(
               label: "Login",
               color: Colors.white,
-              labelColor: Colors.black,
+              labelColor: Style.themeBlack,
               onPressed: () {},
               shadow: true,
+            ),
+            InkWell(
+              onTap: () {
+                //:Todo Navigate to Login Screen
+              },
+              child: RichText(
+                text: TextSpan(
+                    text: "Have an Account? ",
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "Sign in",
+                        style: TextStyle(color: Style.themeGreen),
+                      ),
+                    ]),
+              ),
             ),
             Spacer(),
           ],
