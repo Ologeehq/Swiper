@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:swiper/core/sharedwidgets/theme_long_button.dart';
-import 'package:swiper/utilities/styles.dart' as Style;
+import 'package:swiper/views/widgets/theme_long_button.dart';
+import 'package:swiper/views/utilities/styles.dart' as Style;
 
 class OnBoardingScreen extends StatelessWidget {
   @override
