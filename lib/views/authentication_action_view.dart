@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/OG/AndroidStudioProjects/Swiper/lib/views/rider/authentication/register_view.dart';
+import 'package:swiper/views/rider/authentication/register_view.dart';
 import 'package:swiper/views/utilities/styles.dart' as Style;
 import 'package:swiper/views/widgets/theme_long_button.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:swiper/views/authentication_action_view.dart';
-import 'file:///C:/Users/OG/AndroidStudioProjects/Swiper/lib/views/rider/authentication/sign_in_view.dart';
+import 'package:swiper/views/rider/authentication/sign_in_view.dart';
 import 'package:swiper/views/widgets/theme_long_button.dart';
 import 'package:swiper/views/utilities/styles.dart' as Style;
 
