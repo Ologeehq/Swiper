@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:swiper/views/authentication_action_view.dart';
@@ -39,7 +38,7 @@ class LoginView extends StatelessWidget {
                   style: Style.headingTextStyle,
                 ),
               ),
-              SvgPicture.asset("assets/rafiki.svg"),
+              Image(image: AssetImage("assets/hello.png")),
               NoBorderRadiusTextField(
                 label: "Phone Number",
               ),
