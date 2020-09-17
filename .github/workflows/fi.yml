@@ -21,12 +21,12 @@ jobs:
       - name: Cache Flutter dependencies
         uses: actions/cache@v1
         with:
-          path: ${{ env.FLUTTER_HOME }}
+          path: /opt/hostedtoolcache/flutter
           key: ${{ runner.OS }}-flutter-install-cache-${{ env.flutter_version }}
       - uses: subosito/flutter-action@v1
         with:
           flutter-version: ${{ env.flutter_version }}
-
+  
       - name: Cache pub dependencies
         uses: actions/cache@v2
         with:
@@ -47,6 +47,7 @@ jobs:
 
   build-android:
     name: Build android client
+    needs: [format-and-lint]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -77,13 +78,14 @@ jobs:
 
   build-ios:
     name: Build ios client
+    needs: [format-and-lint]
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
       - name: Cache Flutter dependencies
         uses: actions/cache@v1
         with:
-          path: ${{ env.FLUTTER_HOME }}
+          path: /Users/runner/hostedtoolcache/flutter
           key: ${{ runner.OS }}-flutter-install-cache-${{ env.flutter_version }}
       - uses: subosito/flutter-action@v1
         with:
