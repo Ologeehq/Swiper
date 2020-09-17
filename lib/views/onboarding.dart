@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:swiper/views/authentication_action_view.dart';
+import 'package:swiper/views/rider/sign_in_view.dart';
 import 'package:swiper/views/widgets/theme_long_button.dart';
 import 'package:swiper/views/utilities/styles.dart' as Style;
 
@@ -10,6 +13,7 @@ class OnBoardingScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(30, 40, 30, 0),
         child: Column(
           children: [
+            Spacer(),
             Text(
               "Welcome",
               style: TextStyle(
@@ -37,18 +41,34 @@ class OnBoardingScreen extends StatelessWidget {
               label: "Register",
               color: Style.themeBlue,
               labelColor: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AuthActionScreen(),
+                    ));
+              },
             ),
             LongButton(
               label: "Login",
               color: Colors.white,
               labelColor: Style.themeBlack,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => LoginView(),
+                    ));
+              },
               shadow: true,
             ),
             InkWell(
               onTap: () {
-                //:Todo Navigate to Login Screen
+                Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => LoginView(),
+                    ));
               },
               child: RichText(
                 text: TextSpan(
