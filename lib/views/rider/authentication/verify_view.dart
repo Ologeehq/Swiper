@@ -7,7 +7,7 @@ import 'package:swiper/views/widgets/theme_long_button.dart';
 class VerifyPhoneView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
