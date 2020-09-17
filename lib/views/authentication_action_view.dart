@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:swiper/views/driver/driver_register.dart';
+import 'package:swiper/views/driver/register_car.dart';
 import 'package:swiper/views/rider/register_view.dart';
 import 'package:swiper/views/utilities/styles.dart' as Style;
 import 'package:swiper/views/widgets/theme_long_button.dart';
@@ -39,9 +42,7 @@ class AuthActionScreen extends StatelessWidget {
               ),
             ),
             Spacer(),
-            Image(
-              image: AssetImage("assets/vehiclesale.png"),
-            ),
+            SvgPicture.asset("assets/pana.svg"),
             Spacer(),
             LongButton(
               label: "Sign up to ride",
@@ -60,7 +61,14 @@ class AuthActionScreen extends StatelessWidget {
               label: "Apply to drive",
               color: Style.themeBlue,
               labelColor: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RegisterCar(),
+                    ));
+
+              },
             ),
             Spacer(),
           ],

@@ -1,3 +1,9 @@
+const List carType = [
+  "Saloon Car",
+  "Mini Bus",
+  "Bus",
+];
+
 const List gender = [
   "Male",
   "Female",
