@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:swiper/views/authentication_action_view.dart';
-import 'package:swiper/views/rider/reset_password.dart';
+import 'package:swiper/views/rider/authentication/reset_password.dart';
+import 'package:swiper/views/rider/rider_home_page.dart';
 import 'package:swiper/views/utilities/styles.dart' as Style;
 import 'package:swiper/views/widgets/no_border_radius_textfield.dart';
 import 'package:swiper/views/widgets/theme_long_button.dart';
@@ -47,7 +48,13 @@ class LoginView extends StatelessWidget {
               ),
               LongButton(
                 color: Style.themeBlue,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => RiderDashboard(),
+                      ));
+                },
                 label: "Login",
                 labelColor: Colors.white,
                 shadow: true,
