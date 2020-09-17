@@ -1,5 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:swiper/views/authentication_action_view.dart';
 import 'package:swiper/views/rider/sign_in_view.dart';
 import 'package:swiper/views/widgets/theme_long_button.dart';
@@ -13,6 +13,7 @@ class OnBoardingScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(30, 40, 30, 0),
         child: Column(
           children: [
+            Spacer(),
             Text(
               "Welcome",
               style: TextStyle(
@@ -32,14 +33,20 @@ class OnBoardingScreen extends StatelessWidget {
             Spacer(
               flex: 3,
             ),
-            SvgPicture.asset("assets/amico.svg"),
+            Image(
+              image: AssetImage("assets/busstop.png"),
+            ),
             Spacer(),
             LongButton(
               label: "Register",
               color: Style.themeBlue,
               labelColor: Colors.white,
               onPressed: () {
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>AuthActionScreen()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AuthActionScreen(),
+                    ));
               },
             ),
             LongButton(
@@ -47,14 +54,21 @@ class OnBoardingScreen extends StatelessWidget {
               color: Colors.white,
               labelColor: Style.themeBlack,
               onPressed: () {
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginView()));
-
+                Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => LoginView(),
+                    ));
               },
               shadow: true,
             ),
             InkWell(
               onTap: () {
-                //:Todo Navigate to Login Screen
+                Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => LoginView(),
+                    ));
               },
               child: RichText(
                 text: TextSpan(
