@@ -4,10 +4,148 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:swiper/views/utilities/styles.dart' as Style;
 import 'package:swiper/views/widgets/theme_long_button.dart';
 
-class VerifyPhoneView extends StatelessWidget {
+class VerifyPhoneView extends StatefulWidget {
+  @override
+  _VerifyPhoneViewState createState() => _VerifyPhoneViewState();
+}
+
+class _VerifyPhoneViewState extends State<VerifyPhoneView> {
+  pressButtonFunction(int number, Icon icon) {
+    if (icon != null) {
+      if (fourthNumber != null) {
+        setState(() {
+          fourthNumber = number;
+        });
+        return;
+      }
+      if (thirdNumber != null) {
+        setState(() {
+          thirdNumber = null;
+        });
+        return;
+      }
+      if (secondNumber != null) {
+        setState(() {
+          secondNumber = null;
+        });
+        return;
+      }
+      if (firstNumber != null) {
+        setState(() {
+          firstNumber = null;
+        });
+        return;
+      } else {
+        return;
+      }
+    }
+    if (firstNumber == null) {
+      setState(() {
+        firstNumber = number;
+      });
+      return;
+    }
+    if (secondNumber == null) {
+      setState(() {
+        secondNumber = number;
+      });
+      return;
+    }
+    if (thirdNumber == null) {
+      setState(() {
+        thirdNumber = number;
+      });
+      return;
+    }
+    if (fourthNumber == null) {
+      setState(() {
+        fourthNumber = number;
+      });
+      return;
+    } else {
+      return;
+    }
+  }
+
+  Widget buildNumberButton({int number, Icon icon}) {
+    getChild() {
+      if (icon != null) {
+        return icon;
+      } else {
+        return Text(
+          number?.toString() ?? "",
+          style: GoogleFonts.karla(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
+        );
+      }
+    }
+
+    return Expanded(
+        child: FlatButton(
+            onPressed: () {
+              pressButtonFunction(number, icon);
+            },
+            child: getChild()));
+  }
+
+  Widget buildNumberRow(List<int> numbers) {
+    List<Widget> buttonList = numbers
+        .map((buttonNumber) => buildNumberButton(number: buttonNumber))
+        .toList();
+    return Expanded(
+        child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: buttonList,
+    ));
+  }
+
+  Widget buildSpecialRow() {
+    return Expanded(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          buildNumberButton(),
+          buildNumberButton(number: 0),
+          buildNumberButton(icon: Icon(Icons.backspace))
+        ],
+      ),
+    );
+  }
+
+  buildDot() {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 15),
+      height: 10,
+      width: 10,
+      decoration: BoxDecoration(
+          shape: BoxShape.circle, color: Color(0xFF979797).withOpacity(0.25)),
+    );
+  }
+
+  numberResultRow(int number) {
+    if (number == null) {
+      return buildDot();
+    } else {
+      return Text(
+        "$number",
+        style: GoogleFonts.karla(
+          fontWeight: FontWeight.bold,
+          fontSize: 50,
+        ),
+      );
+    }
+  }
+
+  int firstNumber;
+  int secondNumber;
+  int thirdNumber;
+  int fourthNumber;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -57,15 +195,10 @@ class VerifyPhoneView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  "2 4",
-                  style: GoogleFonts.karla(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 50,
-                  ),
-                ),
-                buildDot(),
-                buildDot(),
+                numberResultRow(firstNumber),
+                numberResultRow(secondNumber),
+                numberResultRow(thirdNumber),
+                numberResultRow(fourthNumber),
               ],
             ),
           ),
@@ -107,113 +240,21 @@ class VerifyPhoneView extends StatelessWidget {
                   ]),
             ),
           ),
-
           Expanded(
-              child: Container(
-            color: Color(0xFFF3F6F8),
-            child: Column(
-              children: [
-                buildNumberRow([1, 2, 3]),
-                buildNumberRow([4, 5, 6]),
-                buildNumberRow([7, 8, 9]),
-                buildSpecialRow(),
-              ],
+            child: Container(
+              color: Color(0xFFF3F6F8),
+              child: Column(
+                children: [
+                  buildNumberRow([1, 2, 3]),
+                  buildNumberRow([4, 5, 6]),
+                  buildNumberRow([7, 8, 9]),
+                  buildSpecialRow(),
+                ],
+              ),
             ),
-          ))
-          // Expanded(
-          //   child: Container(
-          //     color: Color(0xFFF3F6F8),
-          //     child: GridView(
-          //       shrinkWrap: true,
-          //       padding: EdgeInsets.fromLTRB(30, 15, 30, 20),
-          //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          //           crossAxisCount: 3),
-          //       children: [
-          //         for (int i = 1; i < 10; i++)
-          //           Center(
-          //             child: InkWell(
-          //               onTap: () {},
-          //               child: Padding(
-          //                 padding: const EdgeInsets.all(10),
-          //                 child: Text(
-          //                   i.toString(),
-          //                   style: GoogleFonts.karla(
-          //                       fontWeight: FontWeight.bold, fontSize: 22),
-          //                 ),
-          //               ),
-          //             ),
-          //           ),
-          //         Center(child: SizedBox()),
-          //         Center(
-          //           child: Text(
-          //             "0",
-          //             style: GoogleFonts.karla(
-          //                 fontWeight: FontWeight.bold, fontSize: 22),
-          //           ),
-          //         ),
-          //         Center(
-          //             child: IconButton(
-          //                 icon: Icon(Icons.backspace), onPressed: () {})),
-          //       ],
-          //     ),
-          //   ),
-          // )
+          ),
         ],
       ),
     );
   }
-}
-
-Widget buildNumberButton({int number, Icon icon}) {
-  getChild() {
-    if (icon != null) {
-      return icon;
-    } else {
-      return Text(
-        number?.toString() ?? "",
-        style: GoogleFonts.karla(
-          fontSize: 22,
-          fontWeight: FontWeight.bold,
-        ),
-      );
-    }
-  }
-
-  return Expanded(child: FlatButton(onPressed: () {}, child: getChild()));
-}
-
-Widget buildNumberRow(List<int> numbers) {
-  List<Widget> buttonList = numbers
-      .map((buttonNumber) => buildNumberButton(number: buttonNumber))
-      .toList();
-  return Expanded(
-      child: Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    crossAxisAlignment: CrossAxisAlignment.stretch,
-    children: buttonList,
-  ));
-}
-
-Widget buildSpecialRow() {
-  return Expanded(
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        buildNumberButton(),
-        buildNumberButton(number: 0),
-        buildNumberButton(icon: Icon(Icons.backspace))
-      ],
-    ),
-  );
-}
-
-buildDot() {
-  return Container(
-    margin: EdgeInsets.symmetric(horizontal: 15),
-    height: 10,
-    width: 10,
-    decoration: BoxDecoration(
-        shape: BoxShape.circle, color: Color(0xFF979797).withOpacity(0.25)),
-  );
 }
