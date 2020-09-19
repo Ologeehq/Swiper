@@ -57,7 +57,11 @@ class _RideBookingBodyState extends State<RideBookingBody> {
                   itemBuilder: (context, index) {
                     List texts = List.generate(6, (int place) {
                       return InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) => ChooseABus());
+                        },
                         child: Text(
                           "Book a bus",
                           textAlign: TextAlign.center,
@@ -229,6 +233,30 @@ class ChooseLocation extends StatelessWidget {
                 separatorBuilder: (context, index) => Divider(),
                 itemCount: 6),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class ChooseABus extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          InkWell(
+              onTap: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (context) => Container(
+                          color: Colors.red,
+                          child: Column(
+                            children: [Text("fgdtgtg")],
+                          ),
+                        ));
+              },
+              child: Text("Uhiujheoguheoijg")),
         ],
       ),
     );
