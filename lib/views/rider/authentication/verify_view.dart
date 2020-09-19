@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:swiper/views/utilities/styles.dart' as Style;
 import 'package:swiper/views/widgets/theme_long_button.dart';
