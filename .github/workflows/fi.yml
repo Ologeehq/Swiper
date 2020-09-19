@@ -5,7 +5,7 @@ on:
     branches: [ master,dev ] # calls action on master branch
 
 env:
-  flutter_version: "1.17.5"
+  flutter_version: "1.20.0"
   java_version: "12.x"
 
 jobs:
