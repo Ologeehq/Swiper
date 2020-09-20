@@ -2,34 +2,22 @@ import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:swiper/views/rider/book_a_ride.dart';
 import 'package:swiper/views/utilities/styles.dart' as Style;
+import 'package:swiper/views/widgets/custom_drawer.dart';
+import 'package:swiper/views/widgets/menu_button.dart';
+import 'package:swiper/views/widgets/profile_icon.dart';
 import 'package:swiper/views/widgets/theme_long_button.dart';
-
 import 'check_a_nearby_park.dart';
 
 class RiderDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: AppDrawer(),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30, 50, 30, 40),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.zero,
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back,
-                  ),
-                ),
-                ImageIcon(AssetImage("assets/menu-icon.png")),
-              ],
-            ),
+            MenuButton(),
             Text(
               "Good morning OG",
               style: Style.headingTextStyle.copyWith(
@@ -45,26 +33,7 @@ class RiderDashboard extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(
-                top: 40,
-              ),
-              height: 115,
-              width: 115,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Style.themeBlue.withOpacity(0.0307),
-                border: Border.all(
-                  color: Style.themeBlue,
-                  width: 2.24,
-                ),
-              ),
-              child: Icon(
-                Icons.person,
-                size: 60,
-                color: Style.themeBlue,
-              ),
-            ),
+            ProfileIcon(),
             Spacer(
               flex: 2,
             ),

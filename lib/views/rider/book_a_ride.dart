@@ -1,11 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:swiper/views/rider/select_ride.dart';
 import 'package:swiper/views/utilities/styles.dart' as Style;
+import 'package:swiper/views/widgets/custom_drawer.dart';
+import 'package:swiper/views/widgets/menu_button.dart';
 
 class BookARideView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: AppDrawer(),
       body: RideBookingBody(
         subtitle: "Choose your destination",
       ),
@@ -36,51 +40,7 @@ class _RideBookingBodyState extends State<RideBookingBody> {
           });
         },
       ),
-      Container(
-        padding: EdgeInsets.only(top: 20, bottom: 10),
-        height: 280,
-        child: Column(
-          children: [
-            Text(
-              "Choose a ride",
-              textAlign: TextAlign.center,
-              style: Style.headingTextStyle.copyWith(
-                color: Style.themeBlack,
-              ),
-            ),
-            Divider(
-              height: 40,
-            ),
-            Expanded(
-              child: ListView.separated(
-                  padding: EdgeInsets.zero,
-                  itemBuilder: (context, index) {
-                    List texts = List.generate(6, (int place) {
-                      return InkWell(
-                        onTap: () {
-                          showModalBottomSheet(
-                              context: context,
-                              builder: (context) => ChooseABus());
-                        },
-                        child: Text(
-                          "Book a bus",
-                          textAlign: TextAlign.center,
-                          style: Style.titleTextStyle.copyWith(
-                            color: Style.themeBlack,
-                          ),
-                        ),
-                      );
-                    });
-                    return texts[index];
-                  },
-                  separatorBuilder: (context, index) => SizedBox(
-                        height: 10,
-                      ),
-                  itemCount: 6),
-            ),
-          ],
-        ),
-      ),
+      chooseARidePage(),
     ];
     return chooseARidePages[index];
   }
@@ -123,19 +83,26 @@ class _RideBookingBodyState extends State<RideBookingBody> {
                         ),
                       ),
                     ),
-                    Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(0, 4),
-                                color: Colors.black.withOpacity(0.25),
-                                blurRadius: 4,
-                              ),
-                            ]),
-                        child: ImageIcon(AssetImage("assets/menu-icon.png"))),
+                    InkWell(
+                      onTap: () {
+                        Scaffold.of(context).openEndDrawer();
+                      },
+                      child: Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0, 4),
+                                  color: Colors.black.withOpacity(0.25),
+                                  blurRadius: 4,
+                                ),
+                              ]),
+                          child: MenuButton(
+                            aligned: false,
+                          )),
+                    ),
                   ],
                 ),
               ),
@@ -239,26 +206,49 @@ class ChooseLocation extends StatelessWidget {
   }
 }
 
-class ChooseABus extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          InkWell(
-              onTap: () {
-                showModalBottomSheet(
-                    context: context,
-                    builder: (context) => Container(
-                          color: Colors.red,
-                          child: Column(
-                            children: [Text("fgdtgtg")],
-                          ),
-                        ));
+chooseARidePage() {
+  return Container(
+    padding: EdgeInsets.only(top: 20, bottom: 10),
+    height: 280,
+    child: Column(
+      children: [
+        Text(
+          "Choose a ride",
+          textAlign: TextAlign.center,
+          style: Style.headingTextStyle.copyWith(
+            color: Style.themeBlack,
+          ),
+        ),
+        Divider(
+          height: 40,
+        ),
+        Expanded(
+          child: ListView.separated(
+              padding: EdgeInsets.zero,
+              itemBuilder: (context, index) {
+                List texts = List.generate(6, (int place) {
+                  return InkWell(
+                    onTap: () {
+                      showBottomSheet(
+                          context: context, builder: (context) => ChooseABus());
+                    },
+                    child: Text(
+                      "Book a bus",
+                      textAlign: TextAlign.center,
+                      style: Style.titleTextStyle.copyWith(
+                        color: Style.themeBlack,
+                      ),
+                    ),
+                  );
+                });
+                return texts[index];
               },
-              child: Text("Uhiujheoguheoijg")),
-        ],
-      ),
-    );
-  }
+              separatorBuilder: (context, index) => SizedBox(
+                    height: 10,
+                  ),
+              itemCount: 6),
+        ),
+      ],
+    ),
+  );
 }
