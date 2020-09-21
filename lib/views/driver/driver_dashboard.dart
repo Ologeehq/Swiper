@@ -6,7 +6,6 @@ import 'package:swipar/views/widgets/custom_drawer.dart';
 import 'package:swipar/views/widgets/menu_button.dart';
 import 'package:swipar/views/widgets/profile_icon.dart';
 import 'package:swipar/views/widgets/theme_long_button.dart';
-import 'package:swipar/views/rider/check_a_nearby_park.dart';
 
 class DriverDashboard extends StatelessWidget {
   @override

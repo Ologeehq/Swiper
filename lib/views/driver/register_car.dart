@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:swipar/views/driver/driver_register.dart';
 import 'package:swipar/views/driver/make_available.dart';
 import 'package:swipar/views/utilities/constants.dart';
 import 'package:swipar/views/widgets/customDropdown.dart';

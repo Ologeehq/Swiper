@@ -200,6 +200,7 @@ class _ModalBottomSheetState<T> extends State<_ModalBottomSheet<T>> {
     final MaterialLocalizations localizations =
         MaterialLocalizations.of(context);
     String routeLabel;
+
     switch (defaultTargetPlatform) {
       case TargetPlatform.iOS:
         routeLabel = '';
@@ -207,6 +208,15 @@ class _ModalBottomSheetState<T> extends State<_ModalBottomSheet<T>> {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
         routeLabel = localizations.dialogLabel;
+        break;
+      case TargetPlatform.linux:
+        // TODO: Handle this case.
+        break;
+      case TargetPlatform.macOS:
+        // TODO: Handle this case.
+        break;
+      case TargetPlatform.windows:
+        // TODO: Handle this case.
         break;
     }
 
