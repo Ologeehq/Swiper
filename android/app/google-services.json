@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "514444092077",
+    "firebase_url": "https://swipar-df8cb.firebaseio.com",
+    "project_id": "swipar-df8cb",
+    "storage_bucket": "swipar-df8cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514444092077:android:25b6ef7ca3ffdbf8a11c24",
+        "android_client_info": {
+          "package_name": "com.ologeehq.swipar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514444092077-sgpmsrnnm6f7ukcab7s94359cbmegbrn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ologeehq.swipar",
+            "certificate_hash": "cd5fe25122c6e55d9784c500b00d17ebefdee223"
+          }
+        },
+        {
+          "client_id": "514444092077-563m8cfoe5c5jd81k2mnif7lnhmmp9vu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtkzl7yG7Rv45oOgaWO17Xyhr6fW9LGKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514444092077-563m8cfoe5c5jd81k2mnif7lnhmmp9vu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:swiper/views/utilities/styles.dart' as Style;
-import 'package:swiper/views/widgets/profile_icon.dart';
+import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/views/widgets/profile_icon.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({

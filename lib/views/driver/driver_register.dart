@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
-import 'package:swiper/views/rider/authentication/sign_in_view.dart';
-import 'package:swiper/views/utilities/constants.dart';
-import 'package:swiper/views/widgets/customDropdown.dart';
-import 'package:swiper/views/widgets/custom_text_field.dart';
+import 'package:swipar/views/rider/authentication/sign_in_view.dart';
+import 'package:swipar/views/utilities/constants.dart';
+import 'package:swipar/views/widgets/customDropdown.dart';
+import 'package:swipar/views/widgets/custom_text_field.dart';
 import "package:flutter/material.dart";
-import 'package:swiper/views/utilities/styles.dart' as Style;
-import 'package:swiper/views/widgets/theme_long_button.dart';
+import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/views/widgets/theme_long_button.dart';
 
 class DriverRegister extends StatelessWidget {
   @override
@@ -122,9 +122,7 @@ class DriverRegister extends StatelessWidget {
               ),
               LongButton(
                 color: Style.themeBlue,
-                onPressed: () {
-
-                },
+                onPressed: () {},
                 label: "Apply to Drive",
                 labelColor: Colors.white,
                 shadow: true,
@@ -154,7 +152,6 @@ class DriverRegister extends StatelessWidget {
                   ],
                 ),
               )
-
             ],
           ),
         ),

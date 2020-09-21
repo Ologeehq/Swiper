@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:swiper/views/rider/authentication/register_view.dart';
-import 'package:swiper/views/utilities/styles.dart' as Style;
-import 'package:swiper/views/widgets/theme_long_button.dart';
+import 'package:swipar/views/rider/authentication/register_view.dart';
+import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/views/widgets/theme_long_button.dart';
 
 class AuthActionScreen extends StatelessWidget {
   @override

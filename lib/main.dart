@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:swiper/views/onboarding.dart';
+import 'package:swipar/views/onboarding.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

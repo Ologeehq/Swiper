@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:swiper/views/rider/select_ride.dart';
-import 'package:swiper/views/utilities/styles.dart' as Style;
-import 'package:swiper/views/widgets/custom_drawer.dart';
-import 'package:swiper/views/widgets/menu_button.dart';
+import 'package:swipar/views/rider/select_ride.dart';
+import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/views/widgets/custom_drawer.dart';
+import 'package:swipar/views/widgets/menu_button.dart';
 
 class BookARideView extends StatelessWidget {
   @override
