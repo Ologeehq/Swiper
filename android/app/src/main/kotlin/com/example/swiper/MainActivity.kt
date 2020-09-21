@@ -1,4 +1,4 @@
-package com.example.swiper
+package com.ologeehq.swipar
 
 import io.flutter.embedding.android.FlutterActivity
 

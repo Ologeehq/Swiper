@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:swiper/views/rider/authentication/verify_view.dart';
-import 'package:swiper/views/utilities/styles.dart' as Style;
-import 'package:swiper/views/widgets/no_border_radius_textfield.dart';
-import 'package:swiper/views/widgets/theme_long_button.dart';
+import 'package:swipar/views/rider/authentication/verify_view.dart';
+import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/views/widgets/no_border_radius_textfield.dart';
+import 'package:swipar/views/widgets/theme_long_button.dart';
 
 class ResetPasswordView extends StatelessWidget {
   @override

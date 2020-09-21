@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
-import 'package:swiper/views/driver/driver_register.dart';
-import 'package:swiper/views/utilities/constants.dart';
-import 'package:swiper/views/widgets/customDropdown.dart';
-import 'package:swiper/views/widgets/custom_text_field.dart';
+import 'package:swipar/views/driver/driver_register.dart';
+import 'package:swipar/views/utilities/constants.dart';
+import 'package:swipar/views/widgets/customDropdown.dart';
+import 'package:swipar/views/widgets/custom_text_field.dart';
 import "package:flutter/material.dart";
-import 'package:swiper/views/utilities/styles.dart' as Style;
-import 'package:swiper/views/widgets/theme_long_button.dart';
+import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/views/widgets/theme_long_button.dart';
 
 class RegisterCar extends StatelessWidget {
   @override
@@ -32,7 +32,9 @@ class RegisterCar extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: Style.headingTextStyle,
               ),
-              SizedBox(height: 32,),
+              SizedBox(
+                height: 32,
+              ),
               CustomTextField(
                 label: "Driver's name",
               ),
@@ -86,13 +88,15 @@ class RegisterCar extends StatelessWidget {
               LongButton(
                 color: Style.themeBlue,
                 onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>DriverRegister()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DriverRegister()));
                 },
                 label: "Proceed",
                 labelColor: Colors.white,
                 shadow: true,
               ),
-
             ],
           ),
         ),

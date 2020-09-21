@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swiper/views/utilities/styles.dart' as Style;
+import 'package:swipar/views/utilities/styles.dart' as Style;
 
 class NoBorderRadiusTextField extends StatelessWidget {
   const NoBorderRadiusTextField({

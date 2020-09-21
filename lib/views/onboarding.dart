@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:swiper/views/authentication_action_view.dart';
-import 'package:swiper/views/rider/authentication/sign_in_view.dart';
-import 'package:swiper/views/widgets/theme_long_button.dart';
-import 'package:swiper/views/utilities/styles.dart' as Style;
+import 'package:swipar/views/authentication_action_view.dart';
+import 'package:swipar/views/rider/authentication/sign_in_view.dart';
+import 'package:swipar/views/widgets/theme_long_button.dart';
+import 'package:swipar/views/utilities/styles.dart' as Style;
 
 class OnBoardingScreen extends StatelessWidget {
   @override
