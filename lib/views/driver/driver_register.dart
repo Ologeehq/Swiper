@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
+import 'package:swipar/views/driver/driver_verify.dart';
 import 'package:swipar/views/rider/authentication/sign_in_view.dart';
 import 'package:swipar/views/utilities/constants.dart';
 import 'package:swipar/views/widgets/customDropdown.dart';
@@ -122,8 +123,14 @@ class DriverRegister extends StatelessWidget {
               ),
               LongButton(
                 color: Style.themeBlue,
-                onPressed: () {},
-                label: "Apply to Drive",
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DriverVerify(),
+                      ));
+                },
+                label: "Register",
                 labelColor: Colors.white,
                 shadow: true,
               ),

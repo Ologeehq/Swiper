@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swipar/views/driver/driver_register.dart';
 import 'package:swipar/views/rider/authentication/register_view.dart';
 import 'package:swipar/views/utilities/styles.dart' as Style;
 import 'package:swipar/views/widgets/theme_long_button.dart';
@@ -60,7 +61,13 @@ class AuthActionScreen extends StatelessWidget {
               label: "Apply to drive",
               color: Style.themeBlue,
               labelColor: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DriverRegister(),
+                    ));
+              },
             ),
             Spacer(),
           ],
