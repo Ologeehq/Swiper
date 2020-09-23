@@ -1,15 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:swipar/views/rider/select_ride.dart';
+import 'package:swipar/views/rider/bookings.dart';
+import 'package:swipar/views/rider/choose_a_cab.dart';
+import 'package:swipar/views/rider/book_seat.dart';
+import 'package:swipar/views/rider/confirmed_bookings.dart';
 import 'package:swipar/views/utilities/styles.dart' as Style;
-import 'package:swipar/views/widgets/custom_drawer.dart';
+import 'package:swipar/views/widgets/custom_scaffold.dart';
 import 'package:swipar/views/widgets/menu_button.dart';
 
 class BookARideView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      endDrawer: AppDrawer(),
+    return SwiparScaffold(
       body: RideBookingBody(
         subtitle: "Choose your destination",
       ),
@@ -207,6 +209,10 @@ class ChooseLocation extends StatelessWidget {
 }
 
 chooseARidePage() {
+  showSheet(BuildContext context, page) async {
+    await showModalBottomSheet(context: context, builder: (context) => page);
+  }
+
   return Container(
     padding: EdgeInsets.only(top: 20, bottom: 10),
     height: 280,
@@ -228,9 +234,11 @@ chooseARidePage() {
               itemBuilder: (context, index) {
                 List texts = List.generate(6, (int place) {
                   return InkWell(
-                    onTap: () {
-                      showBottomSheet(
-                          context: context, builder: (context) => ChooseABus());
+                    onTap: () async {
+                      await showSheet(context, VehiclePicker());
+                      await showSheet(context, SeatPicker());
+                      await showSheet(context, BookingsView());
+                      await showSheet(context, BookingConfirmed());
                     },
                     child: Text(
                       "Book a bus",

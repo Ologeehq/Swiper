@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:swipar/views/driver/driver_register.dart';
 import 'package:swipar/views/rider/authentication/register_view.dart';
 import 'package:swipar/views/utilities/styles.dart' as Style;
@@ -40,8 +41,9 @@ class AuthActionScreen extends StatelessWidget {
               ),
             ),
             Spacer(),
-            Image(
-              image: AssetImage("assets/vehiclesale.png"),
+            SvgPicture.asset(
+              "assets/vehiclesale.svg",
+              height: 180,
             ),
             Spacer(),
             LongButton(
