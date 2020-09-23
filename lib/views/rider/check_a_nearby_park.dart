@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:swipar/views/widgets/custom_drawer.dart';
 import 'package:swipar/views/widgets/custom_scaffold.dart';
 import 'book_a_ride.dart';
 
