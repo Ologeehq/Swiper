@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swipar/views/utilities/constants.dart';
 import 'package:swipar/views/utilities/styles.dart' as Style;
 import 'package:swipar/views/widgets/seat_booking_row.dart';
 import 'package:swipar/views/widgets/theme_long_button.dart';
@@ -6,8 +7,9 @@ import 'package:swipar/views/widgets/theme_long_button.dart';
 class SeatPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Size screenSize = MediaQuery.of(context).size;
-    return Padding(
+    kScreenSize = MediaQuery.of(context).size;
+    return Container(
+      height: kScreenSize.height * 0.8,
       padding: const EdgeInsets.fromLTRB(30, 15, 30, 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -76,6 +78,9 @@ class SeatPicker extends StatelessWidget {
               ),
             ],
           )),
+          SizedBox(
+            height: 15,
+          ),
           LongButton(
             label: "Proceed",
             shadow: true,

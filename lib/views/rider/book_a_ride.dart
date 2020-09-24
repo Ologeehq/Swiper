@@ -210,7 +210,8 @@ class ChooseLocation extends StatelessWidget {
 
 chooseARidePage() {
   showSheet(BuildContext context, page) async {
-    await showModalBottomSheet(context: context, builder: (context) => page);
+    await showModalBottomSheet(context: context, builder: (context) => page,
+    isScrollControlled: true);
   }
 
   return Container(

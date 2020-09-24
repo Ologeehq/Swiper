@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:swipar/views/utilities/constants.dart';
 import 'package:swipar/views/utilities/styles.dart' as Style;
 import 'package:swipar/views/widgets/theme_long_button.dart';
 
 class BookingsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    kScreenSize = MediaQuery.of(context).size;
+    return Container(
+      height: kScreenSize.height * 0.5,
       padding: const EdgeInsets.fromLTRB(30, 12, 30, 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -27,6 +30,7 @@ class BookingsView extends StatelessWidget {
           ),
           Text(
             "Please pay now to confirm your booking!",
+            textAlign: TextAlign.center,
             style: Style.subTitle1TextStyle,
           ),
           Spacer(),
