@@ -1,13 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:swipar/views/authentication_action_view.dart';
 import 'package:swipar/views/rider/authentication/sign_in_view.dart';
 import 'package:swipar/views/widgets/theme_long_button.dart';
 import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/views/utilities/constants.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    kScreenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30, 40, 30, 0),
@@ -33,8 +36,10 @@ class OnBoardingScreen extends StatelessWidget {
             Spacer(
               flex: 3,
             ),
-            Image(
-              image: AssetImage("assets/busstop.png"),
+            SvgPicture.asset(
+              "assets/busstop.svg",
+              height: kScreenSize.height * 0.283,
+              fit: BoxFit.fill,
             ),
             Spacer(),
             LongButton(

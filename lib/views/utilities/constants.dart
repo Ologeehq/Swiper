@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 const List carType = [
   "Saloon",
   "Minibus",
@@ -23,3 +25,4 @@ const List months = [
   "November",
   "December",
 ];
+Size kScreenSize;

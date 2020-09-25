@@ -15,6 +15,10 @@ class MenuButton extends StatelessWidget {
                 },
                 child: ImageIcon(AssetImage("assets/menu-icon.png"))),
           )
-        : ImageIcon(AssetImage("assets/menu-icon.png"));
+        : InkWell(
+            onTap: () {
+              Scaffold.of(context).openEndDrawer();
+            },
+            child: ImageIcon(AssetImage("assets/menu-icon.png")));
   }
 }

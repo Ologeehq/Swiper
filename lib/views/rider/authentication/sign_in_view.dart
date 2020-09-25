@@ -1,16 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:swipar/views/authentication_action_view.dart';
 import 'package:swipar/views/rider/authentication/reset_password.dart';
 import 'package:swipar/views/rider/rider_home_page.dart';
 import 'package:swipar/views/utilities/styles.dart' as Style;
 import 'package:swipar/views/widgets/no_border_radius_textfield.dart';
 import 'package:swipar/views/widgets/theme_long_button.dart';
+import 'package:swipar/views/utilities/constants.dart';
 
 class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    kScreenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -39,7 +42,14 @@ class LoginView extends StatelessWidget {
                   style: Style.headingTextStyle,
                 ),
               ),
-              Image(image: AssetImage("assets/hello.png")),
+              SvgPicture.asset(
+                "assets/hello.svg",
+                height: kScreenSize.height * 0.283,
+                fit: BoxFit.fill,
+              ),
+              SizedBox(
+                height: 10,
+              ),
               NoBorderRadiusTextField(
                 label: "Phone Number",
               ),
@@ -81,7 +91,7 @@ class LoginView extends StatelessWidget {
               RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(
-                    text: "Don\' have an account? ",
+                    text: "Don\'t have an account? ",
                     style: Style.captionTextStyle.copyWith(
                       color: Style.themeBlack,
                     ),

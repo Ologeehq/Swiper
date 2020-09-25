@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:swipar/views/driver/make_available.dart';
 import 'package:swipar/views/utilities/constants.dart';
-import 'package:swipar/views/widgets/customDropdown.dart';
+import 'package:swipar/views/widgets/custom_dropdown.dart';
 import 'package:swipar/views/widgets/custom_text_field.dart';
 import "package:flutter/material.dart";
 import 'package:swipar/views/utilities/styles.dart' as Style;
