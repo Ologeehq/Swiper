@@ -159,9 +159,9 @@ class ChooseAParkPage extends StatelessWidget {
                     return InkWell(
                       onTap: () {},
                       child: Seats(
-                          name: "John Doe",
+                          name: "Cab Driver's Name :John Doe",
                           number: "090273483749",
-                          seat: "${index + 1}"),
+                          seat: " CAB ${index + 1}"),
                     );
                   });
                   return texts[index];
@@ -226,8 +226,7 @@ class ChooseARidePage extends StatelessWidget {
             height: 20,
           ),
           Expanded(
-            child: ListView.separated(
-                padding: EdgeInsets.symmetric(vertical: 8),
+            child: ListView.builder(
                 itemBuilder: (context, index) {
                   List texts = List.generate(6, (int place) {
                     return InkWell(
@@ -235,16 +234,14 @@ class ChooseARidePage extends StatelessWidget {
                       //   showBottomSheet(
                       //       context: context, builder: (context) => ());
                       // },
-                      child: Seats(name: "John Doe",
+                      child: Seats(
+                          name: "Passenger's Name: John Doe",
                           number: "090273483749",
-                          seat: "${index + 1}"),
+                          seat: "Seat ${index + 1}"),
                     );
                   });
                   return texts[index];
                 },
-                separatorBuilder: (context, index) => SizedBox(
-                      height: 10,
-                    ),
                 itemCount: 6),
           ),
           LongButton(
@@ -302,7 +299,7 @@ class CompletedRide extends StatelessWidget {
           Spacer(
             flex: 1,
           ),
-          Image.asset("assets/like.png"),
+          Expanded(child: Image.asset("assets/like.png")),
           Spacer(
             flex: 1,
           ),
@@ -367,7 +364,7 @@ class Seats extends StatelessWidget {
                   height: 45,
                   child: Center(
                     child: Text(
-                      "Seat $seat",
+                      "$seat",
                       style: Style.body1TextStyle,
                     ),
                   ),
@@ -382,7 +379,7 @@ class Seats extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(child: Text("Passenger's Name: $name")),
+                      Expanded(child: Text("$name")),
                       Expanded(child: Text("Phone No: $number"))
                     ],
                   ),
