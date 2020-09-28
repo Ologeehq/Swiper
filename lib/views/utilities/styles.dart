@@ -7,6 +7,7 @@ const Color themeRed = Color(0xFFE13214);
 const Color disabledButton = Color(0xff818181);
 
 TextStyle titleTextStyle = TextStyle(
+  color: Colors.black,
   fontWeight: FontWeight.w500,
   fontSize: 20,
 );
