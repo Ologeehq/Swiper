@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:swipar/views/driver/make_available.dart';
 import 'package:swipar/views/utilities/styles.dart' as Style;
 import 'package:swipar/views/widgets/custom_drawer.dart';
 import 'package:swipar/views/widgets/menu_button.dart';
@@ -30,25 +31,6 @@ class RideBookingBody extends StatefulWidget {
 }
 
 class _RideBookingBodyState extends State<RideBookingBody> {
-  int pageIndex = 0;
-
-  chooseARide(int index) {
-    List<Widget> chooseARidePages = [
-      ChooseLocation(
-        subtitle: widget.subtitle,
-        onTap: () {
-          setState(() {
-            pageIndex = 1;
-          });
-          showModalBottomSheetCustom(
-              context: context, builder: (ctx) => chooseARide(pageIndex));
-        },
-      ),
-      ChooseARidePage(),
-    ];
-    return chooseARidePages[index];
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -117,8 +99,10 @@ class _RideBookingBodyState extends State<RideBookingBody> {
           children: [
             LongButton(
               color: Colors.white,
-              onPressed: () => showModalBottomSheetCustom(
-                  context: context, builder: (ctx) => chooseARide(pageIndex)),
+              onPressed: () {
+                showModalBottomSheetCustom(
+                    context: context, builder: (ctx) => ChooseAParkPage());
+              },
               label: "Choose a Park",
             )
           ],
@@ -128,98 +112,73 @@ class _RideBookingBodyState extends State<RideBookingBody> {
   }
 }
 
-class ChooseLocation extends StatefulWidget {
-  final String subtitle;
-  final Function onTap;
 
-  const ChooseLocation({Key key, this.subtitle, this.onTap}) : super(key: key);
-
-  @override
-  _ChooseLocationState createState() => _ChooseLocationState();
-}
-
-class _ChooseLocationState extends State<ChooseLocation> {
+class ChooseAParkPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var _size = MediaQuery.of(context).size.height;
     return Container(
-      padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       height: _size * 0.8,
-      width: double.infinity,
-      color: Colors.white,
       child: Column(
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              InkWell(
+                child: Text(
+                  "x",
+                  style: TextStyle(fontSize: 24),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 8,
+          ),
           Text(
-            "Choose Park",
+            "FROM: Unilorin",
+            textAlign: TextAlign.center,
             style: Style.headingTextStyle.copyWith(
-              color: Colors.black,
+              color: Style.themeBlack,
             ),
           ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            widget.subtitle ?? "",
-            style: Style.subTitle1TextStyle.copyWith(
-              color: Colors.black,
-            ),
-          ),
+          Text("TO: Terminus", style: Style.headingTextStyle),
           SizedBox(
             height: 20,
           ),
-          Container(
-            decoration: BoxDecoration(boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.24),
-                offset: Offset(0, 2),
-                blurRadius: 4,
-              ),
-            ]),
-            child: TextFormField(
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(vertical: 10),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                ),
-                filled: true,
-                hintText: "Search",
-                hintStyle: TextStyle(
-                  color: Colors.black.withOpacity(0.25),
-                  fontSize: 20,
-                ),
-                fillColor: Color(0xFFFAFAFA),
-                prefixIcon: Icon(Icons.search),
-                suffixIcon: Icon(Icons.mic),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
+          Text("Available CABS"),
           Expanded(
-            child: ListView.separated(
-                padding: EdgeInsets.zero,
+            child: ListView.builder(
+                padding: EdgeInsets.symmetric(vertical: 8),
                 itemBuilder: (context, index) {
-                  List texts = List.generate(7, (int place) {
+                  List texts = List.generate(6, (int place) {
                     return InkWell(
-                      onTap: widget.onTap,
-                      child: Text(
-                        "Oke odo",
-                        textAlign: TextAlign.center,
-                        style: Style.titleTextStyle.copyWith(
-                          color: Style.themeBlack,
-                        ),
-                      ),
+                      onTap: () {},
+                      child: Seats(
+                          name: "Cab Driver's Name :John Doe",
+                          number: "090273483749",
+                          seat: " CAB ${index + 1}"),
                     );
                   });
                   return texts[index];
                 },
-                separatorBuilder: (context, index) => Divider(),
                 itemCount: 6),
           ),
+          LongButton(
+            shadow: true,
+            labelColor: Colors.white,
+            onPressed: () {
+              Navigator.of(context).pop();
+              showModalBottomSheetCustom(
+                  context: context, builder: (ctx) => ChooseARidePage());
+            },
+            label: "Proceed",
+            color: Style.themeGreen,
+          )
         ],
       ),
     );
@@ -235,6 +194,23 @@ class ChooseARidePage extends StatelessWidget {
       height: _size * 0.8,
       child: Column(
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              InkWell(
+                child: Text(
+                  "x",
+                  style: TextStyle(fontSize: 24),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 8,
+          ),
           Text(
             "1234 is available",
             textAlign: TextAlign.center,
@@ -242,13 +218,15 @@ class ChooseARidePage extends StatelessWidget {
               color: Style.themeBlack,
             ),
           ),
-          Text(
-            "Currently loading",
-            style: Style.headingTextStyle,
+          SizedBox(
+            height: 16,
+          ),
+          Text("Currently loading", style: Style.titleTextStyle),
+          SizedBox(
+            height: 20,
           ),
           Expanded(
-            child: ListView.separated(
-                padding: EdgeInsets.symmetric(vertical: 8),
+            child: ListView.builder(
                 itemBuilder: (context, index) {
                   List texts = List.generate(6, (int place) {
                     return InkWell(
@@ -256,21 +234,95 @@ class ChooseARidePage extends StatelessWidget {
                       //   showBottomSheet(
                       //       context: context, builder: (context) => ());
                       // },
-                      child: Seats(name: null, number: null, seat: null),
+                      child: Seats(
+                          name: "Passenger's Name: John Doe",
+                          number: "090273483749",
+                          seat: "Seat ${index + 1}"),
                     );
                   });
                   return texts[index];
                 },
-                separatorBuilder: (context, index) => SizedBox(
-                      height: 10,
-                    ),
                 itemCount: 6),
           ),
           LongButton(
-            onPressed: () {},
+            shadow: true,
+            labelColor: Colors.white,
+            onPressed: () {
+              Navigator.of(context).pop();
+              showModalBottomSheetCustom(
+                  context: context, builder: (ctx) => CompletedRide());
+            },
             label: "Enroute",
             color: Style.themeGreen,
           )
+        ],
+      ),
+    );
+  }
+}
+
+class CompletedRide extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(16),
+      height: MediaQuery
+          .of(context)
+          .size
+          .height * 0.4,
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              InkWell(
+                child: Text(
+                  "x",
+                  style: TextStyle(fontSize: 24),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Text(
+            "Arrived Destination",
+            textAlign: TextAlign.center,
+            style: Style.headingTextStyle.copyWith(
+              color: Style.themeBlack,
+            ),
+          ),
+          Spacer(
+            flex: 1,
+          ),
+          Expanded(child: Image.asset("assets/like.png")),
+          Spacer(
+            flex: 1,
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).push(CupertinoPageRoute(
+                  builder: (context) => DriverMakeAvailable()));
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Back to "),
+                Text(
+                  "Home",
+                  style: TextStyle(color: Style.themeGreen),
+                )
+              ],
+            ),
+          ),
+          Spacer(
+            flex: 3,
+          ),
         ],
       ),
     );
@@ -283,9 +335,8 @@ class Seats extends StatelessWidget {
   final String seat;
   final bool seatColor;
 
-  const Seats(
-      {Key key,
-      @required this.name,
+  const Seats({Key key,
+    @required this.name,
       @required this.number,
       @required this.seat,
       this.seatColor = true})
@@ -294,36 +345,46 @@ class Seats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        margin: EdgeInsets.symmetric(vertical: 8),
         child: Row(
-      children: [
-        Expanded(
-            flex: 1,
-            child: Container(
-              color: seatColor ? Colors.grey : Style.themeBlue,
-              width: 101,
-              height: 45,
-              child: Center(
-                child: Text(
-                  "Seat ",
-                  style: Style.body1TextStyle,
-                ),
-              ),
-            )),
-        SizedBox(width: 8),
-        Expanded(
-            flex: 4,
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 2),
-              height: 45,
-              color: Color(0xffF4F5F6),
-              child: Column(
-                children: [
-                  Expanded(child: Text("Passenger's Name: $name")),
-                  Expanded(child: Text("Phone No: $number"))
-                ],
-              ),
-            ))
-      ],
-    ));
+          children: [
+            Expanded(
+                flex: 1,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: seatColor ? Colors.grey : Style.themeBlue,
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 4),
+                          color: Colors.black.withOpacity(0.25),
+                          blurRadius: 4,
+                        ),
+                      ]),
+                  width: 101,
+                  height: 45,
+                  child: Center(
+                    child: Text(
+                      "$seat",
+                      style: Style.body1TextStyle,
+                    ),
+                  ),
+                )),
+            SizedBox(width: 8),
+            Expanded(
+                flex: 4,
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 2, horizontal: 8),
+                  height: 45,
+                  color: Color(0xffF4F5F6),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(child: Text("$name")),
+                      Expanded(child: Text("Phone No: $number"))
+                    ],
+                  ),
+                ))
+          ],
+        ));
   }
 }

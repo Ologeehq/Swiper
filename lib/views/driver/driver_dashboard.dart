@@ -39,7 +39,7 @@ class DriverDashboard extends StatelessWidget {
             LongButton(
               color: Style.themeBlue,
               onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     CupertinoPageRoute(
                       builder: (context) => RegisterCar(),
@@ -50,10 +50,21 @@ class DriverDashboard extends StatelessWidget {
               shadow: true,
             ),
             LongButton(
-              color: Colors.white,
-              onPressed: () {},
+              color: Style.disabledButton,
+              onPressed: () {
+                //disabled button till after car registration
+              },
+              label: "Make CAB Available",
+              shadow: true,
+              labelColor: Colors.white,
+            ),
+            LongButton(
+              labelColor: Colors.white,
+              color: Style.disabledButton,
+              onPressed: () {
+                //disabled button till after car registration
+              },
               label: "Withdraw",
-              labelColor: Style.themeBlack,
               shadow: true,
             ),
             Spacer(),
