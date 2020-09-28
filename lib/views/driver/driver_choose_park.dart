@@ -267,6 +267,8 @@ class ChooseARidePage extends StatelessWidget {
                 itemCount: 6),
           ),
           LongButton(
+            shadow: true,
+            labelColor: Colors.white,
             onPressed: () {},
             label: "Enroute",
             color: Style.themeGreen,

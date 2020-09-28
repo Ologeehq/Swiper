@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:swipar/views/driver/driver_choose_park.dart';
+import 'package:swipar/views/driver/wallet.dart';
 import 'package:swipar/views/utilities/styles.dart' as Style;
 import 'package:swipar/views/widgets/custom_drawer.dart';
 import 'package:swipar/views/widgets/menu_button.dart';
@@ -50,7 +51,10 @@ class DriverMakeAvailable extends StatelessWidget {
             ),
             LongButton(
               color: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => WalletPage()));
+              },
               label: "Withdraw",
               labelColor: Style.themeBlack,
               shadow: true,

@@ -88,7 +88,7 @@ class RegisterCar extends StatelessWidget {
               LongButton(
                 color: Style.themeBlue,
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) => DriverMakeAvailable()));
