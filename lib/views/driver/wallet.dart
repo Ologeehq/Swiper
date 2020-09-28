@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:swipar/views/utilities/styles.dart';
 import 'package:swipar/views/widgets/theme_long_button.dart';
 
-class WalletPage extends StatelessWidget {
-  var _wallet_balance = 560;
+var walletBalance = 560;
 
+class WalletPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +40,7 @@ class WalletPage extends StatelessWidget {
                 ),
                 Center(
                   child: Text(
-                    "Wallet : #$_wallet_balance",
+                    "Wallet : #$walletBalance",
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
