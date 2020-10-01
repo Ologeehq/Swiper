@@ -4,6 +4,8 @@ import 'package:swipar/views/rider/bookings.dart';
 import 'package:swipar/views/rider/choose_a_cab.dart';
 import 'package:swipar/views/rider/book_seat.dart';
 import 'package:swipar/views/rider/confirmed_bookings.dart';
+import 'package:swipar/views/rider/rate_ride.dart';
+import 'package:swipar/views/rider/trip_completed.dart';
 import 'package:swipar/views/utilities/styles.dart' as Style;
 import 'package:swipar/views/widgets/custom_scaffold.dart';
 import 'package:swipar/views/widgets/menu_button.dart';
@@ -210,8 +212,8 @@ class ChooseLocation extends StatelessWidget {
 
 chooseARidePage() {
   showSheet(BuildContext context, page) async {
-    await showModalBottomSheet(context: context, builder: (context) => page,
-    isScrollControlled: true);
+    await showModalBottomSheet(
+        context: context, builder: (context) => page, isScrollControlled: true);
   }
 
   return Container(
@@ -240,6 +242,8 @@ chooseARidePage() {
                       await showSheet(context, SeatPicker());
                       await showSheet(context, BookingsView());
                       await showSheet(context, BookingConfirmed());
+                      await showSheet(context, RateRide());
+                      await showSheet(context, TripCompletion());
                     },
                     child: Text(
                       "Book a bus",

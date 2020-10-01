@@ -1,4 +1,10 @@
 import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:swipar/views/rider/rider_home_page.dart';
+
+import 'styles.dart' as Style;
+
+import 'package:flutter/cupertino.dart';
 
 const List carType = [
   "Saloon",
@@ -26,3 +32,29 @@ const List months = [
   "December",
 ];
 Size kScreenSize;
+
+backToHome(BuildContext context) {
+  return InkWell(
+    onTap: () {
+      Navigator.pushReplacement(
+          context,
+          CupertinoPageRoute(
+            builder: (context) => RiderDashboard(),
+          ));
+    },
+    child: RichText(
+        text: TextSpan(
+            text: "Back to ",
+            style: Style.subTitle1TextStyle.copyWith(
+              color: Colors.black,
+            ),
+            children: [
+          TextSpan(
+            text: "Home",
+            style: Style.subTitle1TextStyle.copyWith(
+              color: Style.themeGreen,
+            ),
+          ),
+        ])),
+  );
+}
