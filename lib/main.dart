@@ -12,7 +12,10 @@ class Swipar extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData().copyWith(
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        primaryColor: Colors.white,
+      ).copyWith(
         textTheme: GoogleFonts.latoTextTheme(),
       ),
       home: OnBoardingScreen(),
