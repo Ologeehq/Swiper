@@ -1,5 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:swipar/views/rider/about_screen.dart';
+import 'package:swipar/views/rider/ride_history.dart';
+import 'package:swipar/views/rider/support_screen.dart';
 import 'package:swipar/views/utilities/styles.dart' as Style;
 import 'package:swipar/views/widgets/profile_icon.dart';
 
@@ -91,14 +95,35 @@ class AppDrawer extends StatelessWidget {
                     DrawerMenuItem(
                       assetPath: "assets/history.svg",
                       label: "Ride History",
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => RideHistory(),
+                            ));
+                      },
                     ),
                     DrawerMenuItem(
                       assetPath: "assets/support.svg",
                       label: "Support",
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => Support(),
+                            ));
+                      },
                     ),
                     DrawerMenuItem(
                       assetPath: "assets/about.svg",
                       label: "About us",
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => About(),
+                            ));
+                      },
                     ),
                     DrawerMenuItem(
                       assetPath: "assets/privacy.svg",
@@ -133,30 +158,35 @@ class DrawerMenuItem extends StatelessWidget {
     Key key,
     this.label,
     this.assetPath,
+    this.onPressed,
   }) : super(key: key);
   final String assetPath;
   final String label;
+  final Function onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        left: 30,
-        bottom: 30,
-      ),
-      child: Row(
-        children: [
-          SvgPicture.asset(
-            assetPath,
-          ),
-          SizedBox(
-            width: 15,
-          ),
-          Text(
-            label,
-            style: Style.subTitle1TextStyle,
-          ),
-        ],
+    return InkWell(
+      onTap: onPressed,
+      child: Padding(
+        padding: const EdgeInsets.only(
+          left: 30,
+          bottom: 30,
+        ),
+        child: Row(
+          children: [
+            SvgPicture.asset(
+              assetPath,
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            Text(
+              label,
+              style: Style.subTitle1TextStyle,
+            ),
+          ],
+        ),
       ),
     );
   }
