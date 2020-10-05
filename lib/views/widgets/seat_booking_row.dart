@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/core/core_presentation/styles.dart' as Style;
 import 'package:swipar/views/widgets/booking_button.dart';
 
 class SeatBookingRow extends StatelessWidget {

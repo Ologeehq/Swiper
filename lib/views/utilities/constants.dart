@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:swipar/views/rider/rider_home_page.dart';
 
-import 'styles.dart' as Style;
+import '../../core/core_presentation/styles.dart' as Style;
 
 import 'package:flutter/cupertino.dart';
 

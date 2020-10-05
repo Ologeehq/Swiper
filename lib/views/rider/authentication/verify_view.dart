@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/core/core_presentation/styles.dart' as Style;
 import 'package:swipar/views/widgets/theme_long_button.dart';
 
 class VerifyPhoneView extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:swipar/views/utilities/styles.dart';
+import 'package:swipar/core/core_presentation/styles.dart';
 import 'package:swipar/views/widgets/theme_long_button.dart';
 
 var walletBalance = 560;

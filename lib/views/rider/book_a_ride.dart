@@ -6,7 +6,7 @@ import 'package:swipar/views/rider/book_seat.dart';
 import 'package:swipar/views/rider/confirmed_bookings.dart';
 import 'package:swipar/views/rider/rate_ride.dart';
 import 'package:swipar/views/rider/trip_completed.dart';
-import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/core/core_presentation/styles.dart' as Style;
 import 'package:swipar/views/widgets/custom_scaffold.dart';
 import 'package:swipar/views/widgets/menu_button.dart';
 

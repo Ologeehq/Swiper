@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:swipar/views/driver/make_available.dart';
-import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/core/core_presentation/styles.dart' as Style;
 import 'package:swipar/views/widgets/custom_drawer.dart';
 import 'package:swipar/views/widgets/menu_button.dart';
 import 'package:swipar/views/widgets/theme_long_button.dart';

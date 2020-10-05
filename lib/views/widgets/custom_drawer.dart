@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:swipar/views/rider/about_screen.dart';
 import 'package:swipar/views/rider/ride_history.dart';
 import 'package:swipar/views/rider/support_screen.dart';
-import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/core/core_presentation/styles.dart' as Style;
 import 'package:swipar/views/widgets/profile_icon.dart';
 
 class AppDrawer extends StatelessWidget {

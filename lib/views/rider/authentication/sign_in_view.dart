@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:swipar/views/authentication_action_view.dart';
 import 'package:swipar/views/rider/authentication/reset_password.dart';
 import 'package:swipar/views/rider/rider_home_page.dart';
-import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/core/core_presentation/styles.dart' as Style;
 import 'package:swipar/views/widgets/no_border_radius_textfield.dart';
 import 'package:swipar/views/widgets/theme_long_button.dart';
 import 'package:swipar/views/utilities/constants.dart';
