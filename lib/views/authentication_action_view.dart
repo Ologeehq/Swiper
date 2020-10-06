@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:swipar/views/driver/driver_register.dart';
 import 'package:swipar/views/rider/authentication/register_view.dart';
-import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/core/core_presentation/styles.dart' as Style;
 import 'package:swipar/views/widgets/theme_long_button.dart';
 
 class AuthActionScreen extends StatelessWidget {

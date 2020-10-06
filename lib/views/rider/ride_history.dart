@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/core/core_presentation/styles.dart' as Style;
 import 'package:swipar/views/widgets/custom_scaffold.dart';
 import 'package:swipar/views/widgets/menu_button.dart';
 import 'package:swipar/views/widgets/no_border_radius_textfield.dart';

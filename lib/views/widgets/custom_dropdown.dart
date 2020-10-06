@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import "package:flutter/material.dart";
-import 'package:swipar/views/utilities/styles.dart' as Style;
+import 'package:swipar/core/core_presentation/styles.dart' as Style;
 
 class CustomDropdown extends StatefulWidget {
   const CustomDropdown({
