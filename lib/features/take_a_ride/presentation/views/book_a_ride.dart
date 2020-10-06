@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:swipar/views/rider/bookings.dart';
-import 'package:swipar/views/rider/choose_a_cab.dart';
-import 'package:swipar/views/rider/book_seat.dart';
 import 'package:swipar/views/rider/confirmed_bookings.dart';
-import 'package:swipar/views/rider/rate_ride.dart';
 import 'package:swipar/views/rider/trip_completed.dart';
 import 'package:swipar/core/core_presentation/styles.dart' as Style;
 import 'package:swipar/views/widgets/custom_scaffold.dart';
 import 'package:swipar/views/widgets/menu_button.dart';
+
+import 'book_seat.dart';
+import 'choose_a_cab.dart';
+import 'rate_ride.dart';
 
 class BookARideView extends StatelessWidget {
   @override

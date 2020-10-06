@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:swipar/views/rider/about_screen.dart';
+import 'package:swipar/features/static_screens/presentation/views/about_swipar_view.dart';
+import 'package:swipar/features/static_screens/presentation/views/support_view.dart';
 import 'package:swipar/views/rider/ride_history.dart';
-import 'package:swipar/views/rider/support_screen.dart';
 import 'package:swipar/core/core_presentation/styles.dart' as Style;
 import 'package:swipar/views/widgets/profile_icon.dart';
 

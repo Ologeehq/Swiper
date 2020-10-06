@@ -11,7 +11,8 @@ class Router {
         return MaterialPageRoute(builder: (_) {
           return Scaffold(
               body: Center(
-            child: Text('Error 404. The route you requested does not exist'),
+            child: Text('Error 404. The route you requested does not exist',
+                style: TextStyle(fontSize: 40)),
           ));
         });
     }

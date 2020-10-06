@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
-import 'package:swipar/views/rider/book_a_ride.dart';
+import 'package:swipar/features/take_a_ride/presentation/views/book_a_ride.dart';
 import 'package:swipar/core/core_presentation/styles.dart' as Style;
 import 'package:swipar/views/widgets/custom_scaffold.dart';
 import 'package:swipar/views/widgets/menu_button.dart';
 import 'package:swipar/views/widgets/profile_icon.dart';
 import 'package:swipar/views/widgets/theme_long_button.dart';
-import 'check_a_nearby_park.dart';
+import '../../features/take_a_ride/presentation/views/check_a_nearby_park.dart';
 import 'package:swipar/views/utilities/constants.dart';
 
 class RiderDashboard extends StatelessWidget {
