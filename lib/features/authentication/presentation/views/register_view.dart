@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
-import 'package:swipar/views/rider/authentication/sign_in_view.dart';
+import 'package:swipar/features/authentication/presentation/views/sign_in_view.dart';
 import 'package:swipar/views/utilities/constants.dart';
 import 'package:swipar/views/widgets/custom_dropdown.dart';
 import 'package:swipar/views/widgets/custom_text_field.dart';

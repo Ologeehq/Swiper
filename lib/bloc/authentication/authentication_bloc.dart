@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swipar/bloc/authentication/authentication_event.dart';
 import 'package:swipar/bloc/authentication/authentication_state.dart';
-import 'package:swipar/repositories/userRepository.dart';
+import 'package:swipar/features/authentication/data/user_repository.dart';
 
 class AuthenticationBloc
     extends Bloc<AuthenticationEvent, AuthenticationState> {
