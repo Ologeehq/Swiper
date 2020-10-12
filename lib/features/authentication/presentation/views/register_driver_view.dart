@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
-import 'package:swipar/features/authentication/presentation/views/sign_in_view.dart';
-import 'package:swipar/views/utilities/constants.dart';
-import 'package:swipar/views/widgets/custom_dropdown.dart';
-import 'package:swipar/views/widgets/custom_text_field.dart';
 import "package:flutter/material.dart";
-import 'package:swipar/core/core_presentation/styles.dart' as Style;
-import 'package:swipar/views/widgets/theme_long_button.dart';
 
-class RegisterRiderView extends StatelessWidget {
+import '../../../../core/core_presentation/styles.dart' as Style;
+import '../../../../views/driver/driver_verify.dart';
+import '../../../../views/utilities/constants.dart';
+import '../../../../views/widgets/custom_dropdown.dart';
+import '../../../../views/widgets/custom_text_field.dart';
+import '../../../../views/widgets/theme_long_button.dart';
+
+class RegisterDriverView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,7 +93,7 @@ class RegisterRiderView extends StatelessWidget {
               RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(
-                    text: "By clicking on \'Sign up\', you agree to \nour ",
+                    text: "By clicking on 'Sign up', you agree to \nour ",
                     style: Style.captionTextStyle.copyWith(
                       color: Style.themeBlack,
                     ),
@@ -122,8 +123,14 @@ class RegisterRiderView extends StatelessWidget {
               ),
               LongButton(
                 color: Style.themeBlue,
-                onPressed: () {},
-                label: "Sign up",
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DriverVerify(),
+                      ));
+                },
+                label: "Register",
                 labelColor: Colors.white,
                 shadow: true,
               ),
@@ -142,11 +149,8 @@ class RegisterRiderView extends StatelessWidget {
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                builder: (context) => LoginView(),
-                              ));
+                          Navigator.of(context)
+                              .pushNamed('/authentication/login');
                         },
                     ),
                   ],
