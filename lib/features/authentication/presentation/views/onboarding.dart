@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:swipar/features/authentication/presentation/views/sign_in_view.dart';
-import 'package:swipar/views/authentication_action_view.dart';
-import 'package:swipar/views/widgets/theme_long_button.dart';
-import 'package:swipar/core/core_presentation/styles.dart' as Style;
-import 'package:swipar/views/utilities/constants.dart';
+
+import '../../../../core/core_presentation/styles.dart' as Style;
+import '../../../../views/utilities/constants.dart';
+import '../../../../views/widgets/theme_long_button.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   @override
@@ -47,11 +46,7 @@ class OnBoardingScreen extends StatelessWidget {
               color: Style.themeBlue,
               labelColor: Colors.white,
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AuthActionScreen(),
-                    ));
+                Navigator.of(context).pushNamed('/authentication');
               },
             ),
             LongButton(
@@ -59,21 +54,13 @@ class OnBoardingScreen extends StatelessWidget {
               color: Colors.white,
               labelColor: Style.themeBlack,
               onPressed: () {
-                Navigator.push(
-                    context,
-                    CupertinoPageRoute(
-                      builder: (context) => LoginView(),
-                    ));
+                Navigator.of(context).pushNamed('/authentication/login');
               },
               shadow: true,
             ),
             InkWell(
               onTap: () {
-                Navigator.push(
-                    context,
-                    CupertinoPageRoute(
-                      builder: (context) => LoginView(),
-                    ));
+                Navigator.of(context).pushNamed('/authentication/login');
               },
               child: RichText(
                 text: TextSpan(

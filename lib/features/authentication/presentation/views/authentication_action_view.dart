@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:swipar/features/authentication/presentation/views/register_view.dart';
-import 'package:swipar/views/driver/driver_register.dart';
-import 'package:swipar/core/core_presentation/styles.dart' as Style;
-import 'package:swipar/views/widgets/theme_long_button.dart';
 
-class AuthActionScreen extends StatelessWidget {
+import '../../../../core/core_presentation/styles.dart' as Style;
+import '../../../../views/widgets/theme_long_button.dart';
+
+class SelectRegisterTypeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,11 +51,8 @@ class AuthActionScreen extends StatelessWidget {
               labelColor: Colors.white,
               shadow: true,
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => RegisterRiderView(),
-                    ));
+                Navigator.of(context)
+                    .pushNamed('/authentication/registerRider');
               },
             ),
             LongButton(
@@ -64,11 +60,8 @@ class AuthActionScreen extends StatelessWidget {
               color: Style.themeBlue,
               labelColor: Colors.white,
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DriverRegister(),
-                    ));
+                Navigator.of(context)
+                    .pushNamed('/authentication/registerDriver');
               },
             ),
             Spacer(),

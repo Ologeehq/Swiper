@@ -1,15 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
-import 'package:swipar/features/authentication/presentation/views/sign_in_view.dart';
-import 'package:swipar/views/driver/driver_verify.dart';
-import 'package:swipar/views/utilities/constants.dart';
-import 'package:swipar/views/widgets/custom_dropdown.dart';
-import 'package:swipar/views/widgets/custom_text_field.dart';
 import "package:flutter/material.dart";
-import 'package:swipar/core/core_presentation/styles.dart' as Style;
-import 'package:swipar/views/widgets/theme_long_button.dart';
 
-class DriverRegister extends StatelessWidget {
+import '../../../../core/core_presentation/styles.dart' as Style;
+import '../../../../views/utilities/constants.dart';
+import '../../../../views/widgets/custom_dropdown.dart';
+import '../../../../views/widgets/custom_text_field.dart';
+import '../../../../views/widgets/theme_long_button.dart';
+
+class RegisterRiderView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,14 +122,8 @@ class DriverRegister extends StatelessWidget {
               ),
               LongButton(
                 color: Style.themeBlue,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DriverVerify(),
-                      ));
-                },
-                label: "Register",
+                onPressed: () {},
+                label: "Sign up",
                 labelColor: Colors.white,
                 shadow: true,
               ),
@@ -149,11 +142,8 @@ class DriverRegister extends StatelessWidget {
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                builder: (context) => LoginView(),
-                              ));
+                          Navigator.of(context)
+                              .pushNamed('/authentication/login');
                         },
                     ),
                   ],
